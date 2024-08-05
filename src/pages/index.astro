@@ -1,16 +1,24 @@
 ---
+import CharacterCard from "../components/CharacterCard.vue";
+import CharacterDetail from "../components/CharacterDetail.astro";
+import characters from "../data/characters";
+import type { Character } from "../types/interfaces";
 
+let selectedCharacter: Character | null = null;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html>
+  <head>
+    <title>Character Selector</title>
+  </head>
+  <body>
+    <CharacterDetail character={characters[0]}></CharacterDetail>
+    <!-- <div>
+      {
+        characters.map((character) => (
+          <CharacterCard character={character} />
+        ))
+      }
+    </div> -->
+  </body>
 </html>
